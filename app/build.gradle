@@ -77,6 +77,7 @@ android {
     buildToolsVersion BUILD_TOOL_VERSION
     compileSdkVersion COMPILE_SDK
 
+
     flavorDimensions 'distribution', 'environment'
     useLibrary 'org.apache.http.legacy'
 
@@ -344,7 +345,6 @@ dependencies {
     implementation 'com.google.protobuf:protobuf-javalite:3.10.0'
     implementation 'org.signal:argon2:13.1@aar'
 
-    implementation 'org.signal:ringrtc-android:2.8.9'
 
     implementation "me.leolin:ShortcutBadger:1.1.16"
     implementation 'se.emilsjolander:stickylistheaders:2.7.0'
@@ -381,6 +381,15 @@ dependencies {
         exclude group: 'com.android.support', module: 'appcompat-v7'
         exclude group: 'com.android.support', module: 'recyclerview-v7'
     }
+
+//    implementation 'org.signal:ringrtc-android:2.8.9'
+//
+//    // Jitsi Meet
+//    implementation ('org.jitsi.react:jitsi-meet-sdk:2.11.0') {
+//        exclude group: 'com.facebook.react', module: 'react-native-webrtc'
+//        transitive = true }
+
+    implementation fileTree(dir: 'libs', include: ['*.aar','*.jar'])
 
     implementation 'com.airbnb.android:lottie:3.0.7'
 
